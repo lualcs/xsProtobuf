@@ -1,0 +1,8 @@
+message msgHead {
+    required string name = 1;      //协议名字
+}
+
+message msgBody {
+    repeated string channel = 1;    //指令列表
+    optional string details = 2;    //指令数据 as json
+}
