@@ -1,8 +1,21 @@
 message msgHead {
-    required string name = 1;      //协议名字
+    required string name    = 1;      //协议名字
+    repeated string cmds    = 2;      //指令列表
 }
 
 message msgBody {
-    repeated string channel = 1;    //指令列表
-    optional string details = 2;    //指令数据 as json
+    optional string test    = 1;      //默认消息体
+}
+
+message loginInf {
+    required string wechat   = 1;       //微信
+}
+
+message gameoff {
+    repeated int32  idens    = 1;       //标示
+}
+
+message lookon {
+    required int32  gameid   = 1;       //游戏id
+    optional int32  deskid   = 2;       //桌子id
 }

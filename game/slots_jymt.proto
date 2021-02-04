@@ -1,5 +1,13 @@
 import "message.proto";
 
-message jymt_test {
-    optional string name = 1;
-};
+message jymt_spin {//正常旋转
+    required int32 index = 1;//下注
+}
+
+message jymt_fpin {//免费旋转
+    required int32 index = 1;//下注
+}
+
+message jymt_xpin {//转轴重转
+    required int32 axle = 1;//转轴
+}
