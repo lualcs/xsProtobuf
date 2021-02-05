@@ -1,0 +1,37 @@
+/*
+    登陆模块
+*/
+
+message c2s_loginWeChat {//微信登陆
+    required string accredit    = 1; //微信授权
+    optional string accounts    = 2; //微信账号
+    optional string logolink    = 3; //微信头像
+    optional string nickname    = 4; //微信昵称
+}
+
+message s2c_loginResult {//登陆结果
+    required string nickname    = 1; //用户昵称
+    required string logolink    = 2; //用户头像
+    repeated int64  cointype    = 3; //积分类型
+    repeated int64  coinlist    = 4; //积分数量
+}
+
+/*
+    大厅模块
+*/
+
+
+message s2c_gameOnList {//游戏列表
+    required string gametyp       = 1;//游戏类型
+    repeated int32  gameids       = 2;//游戏id    
+}
+
+
+message s2c_roomOnlist {//游戏房间
+    required int32  gameid        = 1;//游戏id
+}
+
+
+/*
+    游戏模块
+*/

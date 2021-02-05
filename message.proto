@@ -4,18 +4,6 @@ message msgHead {
 }
 
 message msgBody {
-    optional string test    = 1;      //默认消息体
+    optional string json    = 1;      //默认消息体
 }
 
-message loginInf {
-    required string wechat   = 1;       //微信
-}
-
-message gameoff {
-    repeated int32  idens    = 1;       //标示
-}
-
-message lookon {
-    required int32  gameid   = 1;       //游戏id
-    optional int32  deskid   = 2;       //桌子id
-}

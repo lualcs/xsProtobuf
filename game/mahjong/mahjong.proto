@@ -1,0 +1,154 @@
+import "message.proto";
+
+//补花 
+message s2cMahjongBuHua {
+    required int32 seatID = 1;//补花玩家
+    repeated int32 cards  = 2;//补花数据
+}
+
+//出牌
+message s2cMahjongChuPai {
+    required int32 seatID = 1;//出牌玩家
+    repeated int32 cards  = 2;//出牌数据
+}
+
+//出牌
+message c2sMahjongChuPai {
+    repeated int32 cards  = 1;//出牌数据
+}
+
+//摸牌
+message s2cMahjongMoPai {
+    required int32 seatID = 1;//摸牌玩家
+    repeated int32 cards  = 2;//摸牌数据
+}
+
+//吃牌
+message s2cMahjongChiPai {
+    required int32   seatID = 1;//吃牌玩家
+    repeated mjCards cards  = 2;//吃牌数据
+}
+
+//吃牌
+message c2sMahjongChiPai {
+    repeated int32 cards  = 1;//吃牌数据
+}
+
+//碰牌
+message s2cMahjongPengPai {
+    required int32 seatID = 1;//碰牌玩家
+    repeated int32 cards  = 2;//碰牌数据
+}
+
+//碰牌
+message c2sMahjongPengPai {
+    required int32 card  = 1;//碰牌数据
+}
+
+//杠牌
+message s2cMahjongGangPai {
+    required int32   seatID = 1;//杠牌玩家
+    required string  senum  = 2;//杠牌动作
+    repeated mjCards cards  = 3;//杠牌数据
+}
+
+//杠牌
+message c2sMahjongGangPai {
+    required int32 card  = 1;//出牌数据
+}
+
+//胡牌
+message s2cMahjongHuPai {
+    repeated string senum  = 1;//胡牌动作
+    repeated string types  = 2;//胡牌类型
+    repeated int32  cards  = 3;//胡牌数据
+}
+
+//倒计
+message s2cMahjongTimer {
+    required int32      djs = 1;//倒计时
+}
+
+//操作
+message s2cMahjongHandle {
+    required int32      seatID  = 1;//玩家
+    required int32      poinID  = 2;//指向
+    repeated mjHandle   handles = 3;//操作
+}
+
+//积分
+message sc2MahjongDeduct {
+    repeated string senum  = 1;//扣分动作
+    repeated string types  = 2;//扣分类型
+    repeated int64  score  = 3;//扣分多少
+    repeated int64  balan  = 4;//余额多少
+}
+
+//开始
+message s2cMahjongStart {
+}
+
+//结束
+message s2cMahjongClose {
+}
+
+//发牌
+message s2cMahjongDealCard {
+    required bool   isBanker = 1;//是否庄家
+    required int32  seatID   = 2;//发牌玩家
+    optional int32  counts   = 3;//发牌张数
+    repeated int32  cards    = 4;//发牌数据
+}
+
+
+//详情-重连
+message s2cMahjongDetails {
+    required int32       seatID = 1;//请求玩家
+    required string      status = 2;//游戏状态
+    repeated mjCardInfo  pcards = 3;//麻将数据
+}
+
+
+//数组
+message mjCards {
+    repeated int32 cards = 1;//数组
+}
+
+//显示
+message mjShow {
+    required string type    = 1;//类型 吃碰杠胡补花
+    required int32  from    = 2;//来源
+    repeated int32  cards   = 3;//数据
+}
+
+//操作
+message mjHandle {
+    required string   type      = 1;//类型
+    optional int32    card      = 2;//数据
+    repeated int32    cards     = 3;//数据
+    repeated mjCards  cardList  = 4;//数据
+    optional int32    value     = 5;//数据 
+}
+
+//玩家牌数据
+message mjCardInfo {
+    repeated mjShow shows   = 1;//展示数据
+    repeated int32  hands   = 2;//手牌数据
+    repeated int32  expor   = 3;//出牌数据
+    required int32  count   = 4;//手牌数量
+}
+
+//流水详情
+message mjBillDetail {
+    repeated int32  from    = 1;//来源
+    required int32  score   = 2;//积分
+    required int32  times   = 3;//倍数
+    repeated string types   = 4;//类型
+}
+
+//积分流水
+message mjBillScore {
+    required int32  score   = 1;//积分
+    repeated int32  froms   = 2;//来源
+    repeated string types   = 3;//类型
+}
