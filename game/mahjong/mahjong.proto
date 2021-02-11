@@ -84,6 +84,14 @@ message sc2MahjongDeduct {
     repeated int64  balan  = 4;//余额多少
 }
 
+//详情-重连
+message s2cMahjongDetails {
+    required int32       seatID  = 1;//请求玩家
+    required string      status  = 2;//游戏状态
+    repeated mjCardInfo  pcards  = 3;//麻将数据
+    repeated mjFill      mjFills = 4;//包含麻将
+}
+
 //开始
 message s2cMahjongStart {
     repeated mjFill mjFills = 1;//包含麻将
@@ -99,14 +107,6 @@ message s2cMahjongDealCard {
     required int32  seatID   = 2;//发牌玩家
     optional int32  counts   = 3;//发牌张数
     repeated int32  cards    = 4;//发牌数据
-}
-
-
-//详情-重连
-message s2cMahjongDetails {
-    required int32       seatID = 1;//请求玩家
-    required string      status = 2;//游戏状态
-    repeated mjCardInfo  pcards = 3;//麻将数据
 }
 
 
