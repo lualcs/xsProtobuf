@@ -86,6 +86,7 @@ message sc2MahjongDeduct {
 
 //开始
 message s2cMahjongStart {
+    repeated mjFill mjFills = 1;//包含麻将
 }
 
 //结束
@@ -112,6 +113,14 @@ message s2cMahjongDetails {
 //数组
 message mjCards {
     repeated int32 cards = 1;//数组
+}
+
+//麻将
+message mjFill {
+    required int32  start = 1;//开始
+    required int32  close = 2;//结束
+    required int32  color = 3;//花色
+    required int32  again = 4;//数量
 }
 
 //显示
