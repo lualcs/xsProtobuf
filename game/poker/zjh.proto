@@ -1,0 +1,5 @@
+import "message.proto";
+
+message zjh_addBet {//加注
+
+}
