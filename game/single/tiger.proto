@@ -1,0 +1,30 @@
+import "message.proto";
+
+
+//老虎机旋转-选择-图标
+message c2s_tiger_spin {
+    repeated int32 selects = 1;//选择
+    repeated int32 numbers = 2;//数量
+}
+
+//老虎机猜测-大小-庄闲
+message c2s_tiger_guess {
+    repeated int32  selects = 1;//选择
+    repeated int32  numbers = 2;//数量
+}
+
+
+//老虎机结果-旋转-结果
+message s2c_tiger_spin {
+    required int32  awards = 1;//奖项
+    repeated int32  icons  = 2;//结果
+    required int64  bonus  = 3;//奖金
+    required c2s_tiger_spin  select = 4;//选择
+}
+
+//老虎机结果-猜测-结果
+message s2c_tiger_guess {
+    repeated int32  index = 1;//结果
+    required int64  bonus = 2;//奖金
+    required c2s_tiger_guess select = 3;//选择
+}

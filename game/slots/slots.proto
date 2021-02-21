@@ -1,0 +1,41 @@
+import "message.proto";
+
+//正常旋转
+message c2s_slots_spin {
+    required int32 index = 1;//下注
+}
+
+//免费旋转
+message c2s_slots_free {
+    required int32 index = 1;//下注
+}
+
+//转轴重转
+message c2s_slots_reset {
+    required int32 index = 1;//转轴
+}
+
+//旋转结果
+message s2c_slots_spin {
+    required int64 bonus = 1;//奖金
+    required int64 price = 2;//成本
+    required int32 index = 3;//下注
+    repeated int32 icons = 4;//结果
+    repeated int64 reset = 5;//重转
+}
+
+//免费结果
+message s2c_slots_free {
+    required int64 bonus = 1;//奖金
+    required int32 index = 2;//下注
+    repeated int32 icons = 3;//结果
+}
+
+//重转结果
+message s2c_slots_reset {
+    required int64 bonus = 1;//奖金
+    required int64 price = 2;//成本
+    required int32 index = 3;//下注
+    repeated int32 icons = 4;//结果
+    repeated int64 reset = 5;//重转
+}
