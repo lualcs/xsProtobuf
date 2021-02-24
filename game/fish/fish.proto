@@ -1,0 +1,70 @@
+import "message.proto";
+
+//切换炮台
+message c2s_fish_change {
+    required int32 index = 1;//炮台
+}
+
+//发起攻击
+message c2s_fish_attack {
+    required int32 angle = 1;//角度
+}
+
+//通知炮台
+message s2c_fish_change {
+    required int32 place = 1;//位置
+    required int32 index = 1;//炮台
+}
+
+//通知攻击
+message s2c_fish_attack {
+    required int32 place = 1;//位置
+    required int32 angle = 2;//角度
+    required int32 ident = 3;//标识
+    required int32 speed = 4;//速度
+    required int64 price = 5;//成本
+    required int64 score = 6;//余额
+}
+
+//击中信息
+message fish_bomb {
+    required int32 shell = 1;//炮弹
+    required int32 catch = 2;//受击
+    required int32 blood = 3;//血量
+    required int32 minus = 4;//伤害
+    optional int64 bouns = 5;//奖金
+}
+
+//通知击中
+message s2c_fish_bomb {
+    repeated fish_bomb bombs = 1;//击中
+    required int32     place = 2;//位置
+    required int64     score = 3;//余额
+}
+
+//位置信息
+message posit {
+    required int32 x = 1;
+    required int32 y = 2;
+}
+
+//创建鱼类
+message fish {
+    required int32 ident = 1;//标识
+    required int32 class = 2;//啥鱼
+    required int64 spead = 3;//速度
+    repeated posit route = 4;//路线
+}
+
+//通知鱼潮
+message s2c_fish_boom {
+    required int64 birth = 1;//生日
+    repeated fish  fishs = 2;//鱼群
+}
+
+
+//游戏详情
+message s2c_fish_game {
+    repeated fish fishs = 1;//鱼群
+    repeated play users = 2;//玩家
+}
