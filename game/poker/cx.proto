@@ -1,0 +1,32 @@
+
+//加注请求
+message c2s_cx_addBet {
+    required int32 index = 1;//加注
+}
+
+//加注通知
+message s2c_cx_addBet {
+    required int32 index = 1;//下注
+    required int64 total = 2;//总注
+    required int32 place = 3;//位置
+}
+
+//跟注通知
+message s2c_cx_withBet {
+    required int32 index = 1;//下注
+    required int64 total = 2;//总注
+    required int32 place = 3;//位置
+}
+
+//弃牌通知
+message s2c_cx_giveup {
+    required int32 place = 1;//位置
+    repeated int32 cards = 2;//手牌
+}
+
+//发牌通知
+message s2c_cx_dealCard {
+    required int32 place = 1;//位置
+    repeated int32 cards = 2;//扑克
+    required int32 count = 3;//几张
+}

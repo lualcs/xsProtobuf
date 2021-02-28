@@ -1,13 +1,55 @@
 import "message.proto";
 
+//看牌通知
+message s2c_zjh_seeCard {
+    required int32 place = 1;//位置
+    repeated int32 cards = 2;//手牌
+}
+
 //加注请求
-message c2s_addBet {
+message c2s_zjh_addBet {
     required int32 index = 1;//下注
 }
 
 //加注通知
-message s2c_addBet {
+message s2c_zjh_addBet {
     required int32 index = 1;//下注
-    required int32 place = 2;//位置
+    required int64 total = 2;//总注
+    required int32 place = 3;//位置
 
+}
+
+//跟注通知
+message s2c_zjh_withBet {
+    required int32 index = 1;//下注
+    required int64 total = 2;//总注
+    required int32 place = 3;//位置
+}
+
+//弃牌通知
+message s2c_zjh_giveup {
+    required int32 place = 1;//位置
+    repeated int32 cards = 2;//手牌
+}
+
+//比牌请求
+message c2s_zjh_killing {
+    required int32 place = 1;//位置
+    required int32 targe = 2;//目标
+}
+
+//比牌通知
+message s2c_zjh_killing {
+    required int32 place = 1;//位置
+    required int32 targe = 2;//目标
+    required int32 loser = 3;//输家
+    required int64 price = 4;//成本
+    required int64 score = 5;//余额
+}
+
+//结算通知
+message s2c_zjh_settle {
+    required int32 place = 1;//赢家
+    required int64 bouns = 2;//奖金
+    required int64 score = 3;//余额
 }
