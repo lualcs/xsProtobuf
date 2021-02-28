@@ -1,5 +1,13 @@
 import "message.proto";
 
-message zjh_addBet {//加注
+//加注请求
+message c2s_addBet {
+    required int32 index = 1;//下注
+}
+
+//加注通知
+message s2c_addBet {
+    required int32 index = 1;//下注
+    required int32 place = 2;//位置
 
 }
