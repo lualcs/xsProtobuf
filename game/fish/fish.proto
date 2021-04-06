@@ -56,6 +56,14 @@ message fish {
     repeated posit route = 4;//路线
 }
 
+//创建鱼类
+message play {
+    required int32 ident = 1;//标识
+    required int32 class = 2;//啥鱼
+    required int64 spead = 3;//速度
+    repeated posit route = 4;//路线
+}
+
 //通知鱼潮
 message s2c_fish_boom {
     required int64 birth = 1;//生日

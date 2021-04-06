@@ -1,0 +1,10 @@
+//游戏列表
+message s2c_gameOnList {
+    required string gametyp       = 1;//游戏类型
+    repeated int32  gameids       = 2;//游戏id    
+}
+
+//游戏房间
+message s2c_roomOnlist {
+    required int32  gameid        = 1;//游戏id
+}

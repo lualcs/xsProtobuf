@@ -1,0 +1,36 @@
+
+//游客登录
+message c2s_loginBisitor {
+    required string accredit    = 1; //手机授权
+}
+
+//账号登录
+message c2s_loginAccount {
+    required string accounts    = 1;//用户账号
+    required string password    = 2;//账号密码
+}
+
+//手机登录
+message c2s_loginPhone {
+    required string phonenum    = 1;//手机号码
+    required string password    = 2;//账号密码
+}
+
+//微信登陆
+message c2s_loginWeChat {
+    required string accredit    = 1; //微信授权
+    optional string accounts    = 2; //微信账号
+    optional string logolink    = 3; //微信头像
+    optional string nickname    = 4; //微信昵称
+}
+
+
+//登陆结果
+message s2c_loginResult {
+    required string loginMod    = 1; //登录方式
+    required string nickname    = 2; //用户昵称
+    required string logolink    = 3; //用户头像
+    repeated int64  cointype    = 4; //积分类型
+    repeated int64  coinlist    = 5; //积分数量
+}
+

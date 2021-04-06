@@ -1,0 +1,4 @@
+//购买积分
+message c2s_buyScore {
+    required string score = 1;
+}
