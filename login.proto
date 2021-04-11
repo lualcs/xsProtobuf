@@ -31,7 +31,7 @@ message s2c_loginResult {
     required string loginBid    = 2;  //绑定账号
     required string nickname    = 3;  //用户昵称
     required string accounts    = 4;  //用户账号
-    required string logolink    = 5;  //用户头像
+    required string log         = 5;  //用户头像
     required int32  rid         = 6;  //用户编号
     required int64  coin        = 7;  //硬币分数
     required int64  silver      = 8;  //银币分数
