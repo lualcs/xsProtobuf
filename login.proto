@@ -1,6 +1,6 @@
 
 //游客登录
-message c2s_loginBisitor {
+message c2s_loginTourists {
     required string accredit    = 1; //手机授权
 }
 
