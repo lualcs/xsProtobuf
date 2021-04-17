@@ -19,9 +19,6 @@ message c2s_loginPhone {
 //微信登陆
 message c2s_loginWeChat {
     required string accredit    = 1; //微信授权
-    optional string accounts    = 2; //微信账号
-    optional string logolink    = 3; //微信头像
-    optional string nickname    = 4; //微信昵称
 }
 
 
@@ -39,3 +36,13 @@ message s2c_loginResult {
     required int64  masonry     = 10; //砖石分数
 }
 
+
+//更改昵称
+message c2s_changeNickname {
+    required string nickname    = 1;  //昵称
+}
+
+//更新头像
+message c2s_changeLogolink {
+    required string logolink    = 1;  //头像
+}
