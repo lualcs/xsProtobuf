@@ -10,6 +10,11 @@ message c2s_fish_attack {
     required int32 angle = 1;//角度
 }
 
+//使用技能
+message c2s_fish_skill {
+    required int32 c2s_fish_skill = 1;//标识 
+}
+
 //通知炮台
 message s2c_fish_change {
     required int32 place = 1;//位置
@@ -50,18 +55,12 @@ message posit {
 
 //创建鱼类
 message fish {
-    required int32 ident = 1;//标识
-    required int32 class = 2;//啥鱼
-    required int64 spead = 3;//速度
-    repeated posit route = 4;//路线
-}
-
-//创建鱼类
-message play {
-    required int32 ident = 1;//标识
-    required int32 class = 2;//啥鱼
-    required int64 spead = 3;//速度
-    repeated posit route = 4;//路线
+    required int64 birth = 1;//生日
+    required int32 ident = 2;//标识
+    required int32 class = 3;//啥鱼
+    required int32 spead = 4;//速度
+    required int32 multi = 5;//倍数
+    repeated posit route = 6;//路线
 }
 
 //通知鱼潮
