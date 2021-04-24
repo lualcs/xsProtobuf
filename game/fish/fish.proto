@@ -73,5 +73,4 @@ message s2c_fish_boom {
 //游戏详情
 message s2c_fish_game {
     repeated fish fishs = 1;//鱼群
-    repeated play users = 2;//玩家
 }
