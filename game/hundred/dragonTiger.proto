@@ -5,3 +5,22 @@ message s2cDragonTigerBetting {
     required string area = 1;   //下注区域
     required int64  bets = 2;   //下注分数
 }
+
+//发牌
+message s2cDragonTigerDealCard {
+    required string area    = 1;    //游戏结果
+    required int32  dragon  = 2;    //龙牌扑克
+    required int32  tiger   = 3;    //虎牌扑克
+}
+
+//结算
+message dragonTigerSettle {
+    required int64  score   = 1;    //游戏得分
+    required int32  trage   = 2;    //得分目标
+    required int32  orgin   = 3;    //得分来源
+}
+
+//结算
+message s2cDragonTigerSettle {
+    repeated dragonTigerSettle settles = 1; //结算数据
+}
