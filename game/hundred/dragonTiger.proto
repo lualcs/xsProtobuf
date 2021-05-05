@@ -1,0 +1,7 @@
+import "message.proto";
+
+//下注
+message s2cDragonTigerBetting {
+    required string area = 1;   //下注区域
+    required int64  bets = 2;   //下注分数
+}
