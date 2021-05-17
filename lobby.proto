@@ -1,3 +1,8 @@
+//联盟信息
+message s2c_allianceInfo {
+    required int32 allianceID = 1;//联盟ID 
+}
+
 //购买积分
 message c2s_buyScore {
     required string score = 1;
