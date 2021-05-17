@@ -9,7 +9,7 @@ message s2c_allianceInfo {
 //代理信息
 message s2c_agencyInfo {
     required int32  agentID      = 1; //代理ID
-    required INT32  userID       = 2; //代理用户
+    required int32  userID       = 2; //代理用户
     required string nickname     = 3; //代理昵称
     required int32  memberNumber = 4;//成员数量
 }
