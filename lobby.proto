@@ -1,9 +1,24 @@
+
 //联盟信息
 message s2c_allianceInfo {
-    required int32 allianceID = 1;//联盟ID 
+    required int32  allianceID   = 1;//联盟ID
+    required string allianceName = 2;//联盟名字
+    required int32  memberNumber = 3;//成员数量
 }
 
-//购买积分
-message c2s_buyScore {
-    required string score = 1;
+//代理信息
+message s2c_agencyInfo {
+    required int32  agentID      = 1; //代理ID
+    required INT32  userID       = 2; //代理用户
+    required string nickname     = 3; //代理昵称
+    required int32  memberNumber = 4;//成员数量
 }
+
+//联盟成员
+message s2c_memberInfo {
+    required int32  memberID    = 1;//成员ID
+    required int32  userID      = 2;//成员玩家
+    required string nickname    = 3;//成员昵称
+    required string identity    = 4;//成员身份
+}
+
