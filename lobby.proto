@@ -9,16 +9,24 @@ message s2c_allianceInfo {
 //代理信息
 message s2c_agencyInfo {
     required int32  agentID      = 1; //代理ID
-    required int32  userID       = 2; //代理用户
-    required string nickname     = 3; //代理昵称
-    required int32  memberNumber = 4;//成员数量
+    required int32  memberNumber = 2; //成员数量
 }
 
 //联盟成员
 message s2c_memberInfo {
     required int32  memberID    = 1;//成员ID
-    required int32  userID      = 2;//成员玩家
-    required string nickname    = 3;//成员昵称
-    required string identity    = 4;//成员身份
+    required string identity    = 2;//成员身份
+}
+
+//联盟信息
+message s2c_allianceBase {
+    optional s2c_allianceInfo alliance = 1;//联盟信息
+    optional s2c_agencyInfo   agency   = 2;//代理信息
+    optional s2c_memberInfo   member   = 3;//成员信息
+}
+
+//联盟数据
+message s2c_allianceData {
+    repeated s2c_allianceBase alliances = 1;//联盟信息
 }
 
