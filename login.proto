@@ -34,6 +34,7 @@ message s2c_loginResult {
     required int64  silver      = 8;  //银币分数
     required int64  gold        = 9;  //金币分数
     required int64  masonry     = 10; //砖石分数
+    required int32  loginCount  = 11; //登录次数
 }
 
 
