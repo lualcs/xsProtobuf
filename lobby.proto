@@ -19,14 +19,14 @@ message s2c_memberInfo {
 }
 
 //联盟信息
-message s2c_allianceBase {
+message s2c_allianceClub {
     optional s2c_allianceInfo alliance = 1;//联盟信息
     optional s2c_agencyInfo   agency   = 2;//代理信息
     optional s2c_memberInfo   member   = 3;//成员信息
 }
 
 //联盟数据
-message s2c_allianceData {
-    repeated s2c_allianceBase alliances = 1;//联盟信息
+message s2c_allianceClubs {
+    repeated s2c_allianceClub clubs = 1;//联盟信息
 }
 
