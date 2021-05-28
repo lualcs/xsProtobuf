@@ -20,7 +20,7 @@ message s2c_agencyInfo {
 //联盟成员
 message s2c_memberInfo {
     required int32  memberID    = 1;//成员ID
-    required string identity    = 2;//成员身份
+    required string office      = 2;//成员身份
 }
 
 //联盟信息
