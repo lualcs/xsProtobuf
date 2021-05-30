@@ -28,12 +28,13 @@ message s2c_loginResult {
     required string loginBid    = 2;  //绑定账号
     required string nickname    = 3;  //用户昵称
     required string accounts    = 4;  //用户账号
-    required string logo        = 5;  //用户头像
-    required int32  rid         = 6;  //用户编号
-    required int64  coin        = 7;  //硬币分数
-    required int64  silver      = 8;  //银币分数
-    required int64  gold        = 9;  //金币分数
-    required int64  masonry     = 10; //砖石分数
+    required string office      = 5;  //用户身份
+    required string logo        = 6;  //用户头像
+    required int32  rid         = 7;  //用户编号
+    required int64  coin        = 8;  //硬币分数
+    required int64  silver      = 9;  //银币分数
+    required int64  gold        = 10; //金币分数
+    required int64  masonry     = 11; //砖石分数
 }
 
 
