@@ -5,9 +5,9 @@ message s2c_allianceInfo {
     required string allianceName = 2;//联盟名字
     required string personality  = 3;//联盟公告
     repeated string logoGs       = 4;//联盟头像        
-    required int32  memberNumber = 4;//成员数量
-    required int32  onlineNumber = 5;//在线数量
-    required int32  combatNumber = 6;//对局数量
+    required int32  memberNumber = 5;//成员数量
+    required int32  onlineNumber = 6;//在线数量
+    required int32  combatNumber = 7;//对局数量
 }
 
 //代理信息
