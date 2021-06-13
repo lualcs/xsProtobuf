@@ -1,8 +1,8 @@
 
 //联盟信息
-message s2c_allianceInfo {
-    required int32  allianceID   = 1;//联盟ID
-    required string allianceName = 2;//联盟名字
+message s2c_clubInfo {
+    required int32  clubID   = 1;//联盟ID
+    required string clubName = 2;//联盟名字
     required string personality  = 3;//联盟公告
     repeated string logoGs       = 4;//联盟头像        
     required int32  memberNumber = 5;//成员数量
@@ -11,7 +11,7 @@ message s2c_allianceInfo {
 }
 
 //代理信息
-message s2c_agencyInfo {
+message s2c_adminInfo {
     required int32  agentID      = 1; //代理ID
     required int32  memberNumber = 2; //成员数量
     required int32  onlineNumber = 3;//在线数量
@@ -25,14 +25,14 @@ message s2c_memberInfo {
 }
 
 //联盟信息
-message s2c_allianceClub {
-    optional s2c_allianceInfo alliance = 1;//联盟信息
-    optional s2c_agencyInfo   agency   = 2;//代理信息
+message s2c_clubClub {
+    optional s2c_clubInfo club = 1;//联盟信息
+    optional s2c_adminInfo   admin   = 2;//代理信息
     optional s2c_memberInfo   member   = 3;//成员信息
 }
 
 //联盟数据
-message s2c_allianceClubs {
-    repeated s2c_allianceClub clubs = 1;//联盟信息
+message s2c_clubClubs {
+    repeated s2c_clubClub clubs = 1;//联盟信息
 }
 
