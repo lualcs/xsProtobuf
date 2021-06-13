@@ -6,7 +6,7 @@ message c2s_loginTourists {
 
 //账号登录
 message c2s_loginAccount {
-    required string accounts    = 1;//用户账号
+    required string users    = 1;//用户账号
     required string password    = 2;//账号密码
 }
 
@@ -27,7 +27,7 @@ message s2c_loginResult {
     required string loginMod    = 1;  //登录方式
     required string loginBid    = 2;  //绑定账号
     required string nickname    = 3;  //用户昵称
-    required string accounts    = 4;  //用户账号
+    required string users    = 4;  //用户账号
     required string office      = 5;  //用户身份
     required string logo        = 6;  //用户头像
     required int32  rid         = 7;  //用户编号
